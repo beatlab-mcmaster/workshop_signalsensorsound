@@ -1,0 +1,130 @@
+---
+title: "Cardiac Signals"
+author: "Maya B. Flannery"
+date: "22/23 November 2024"
+format: 
+  revealjs:
+    theme: [simple]
+bibliography: references.bib
+csl: elsevier-vancouver.csl
+    # multiplex: true
+---
+
+# Physiological signals
+
+## Audio signals
+
+We have just learned how physical sounds are represented as audio signals.
+
+::: {layout="[[1,1], [1]]"}
+![Sound waves from speakers](./images/speaker.gif){fig-align="center" .fragment height="100px"}
+
+![Instruments](./images/guitar.gif){fig-align="center" .fragment height="100px"}
+
+![Represented as waveforms](./images/soundwave.png){fig-align="center" .fragment height="100px"}
+:::
+
+## Audio signals
+
+...and we can analyse these signals to describe and reveal many of the underlying properties that make up sound.
+
+![img from python analysis]()
+
+## Physiological signals
+
+Our bodies also generate signals.
+
+::: {layout-nrow=2}
+![Walking](){fig-align="center" .fragment width="100px"}
+
+![EEG](){fig-align="center" .fragment width="100px"}
+
+![Breathing](){fig-align="center" .fragment width="100px"}
+
+![Heart beat](){fig-align="center" .fragment width="100px"}
+:::
+
+:::notes
+think about some signals that our bodies generate
+:::
+
+## Physiological signals
+
+Psychologists are interested in these signals as well---what can they tell us about underlying properties of human behaviour, cognition, and perception?
+
+# The heart
+
+Overview
+
+## Cardiac anatomy
+
+![The heart circulates blood, rich in oxygen, nutrients, hormones, etc., throughout the body with precision [@berntson-2017-cardiovascular-psychophysiology].](./images/2017-psychophysiology-heart.png)
+
+## The cardiac cycle
+
+![\[Note the bottom line: the Electrocardiogram\] The cardiac cycle consists of a large voltage 'spike' from cells in the heart, causing the heart to contract (*systole*, pushing blood into the body); followed by a period of relaxation (*diastole*, where the heart refills with blood from the body) [@berntson-2017-cardiovascular-psychophysiology].](./images/2017-psychophysiology-cycle.png)
+
+# Why is this interesting?
+
+## Intrinsic rhythms
+
+![Only a few organs produce internal bodily rhythms. These rhythms are affected by bodily states [@engelen-2023-interoceptive-rhythms-in-the-brain].](./images/2023-interoceptive-rhythms.png)
+
+## The heart *is influenced by* our nervous system
+
+![The autonomic nervous system (ANS) coordinates all of our organs [@purves-2018-neuroscience].](./images/2018-neuroscience-ans.png)
+
+## The heart also *influences* our nervous system
+
+![The heart in connected by both efferent *and* afferent neurons (so, the brain *sends* and *receives* information from the heart) [@purves-2018-neuroscience].](./images/2018-neuroscience-heart.png)
+
+## We can (easily\*) detect cardiac signals!
+
+# Measuring cardiac activity
+
+## Electrocardiogram (ECG/EKG)
+
+![Electrical potentials produced by the heart [@2014-figure-bundle-branch-block]](./images/BBB-physiology.jpg)
+
+## Electrocardiogram (ECG/EKG)
+
+![Combine to produce a waveform](./images/2012-ECG-signal-processing.png)
+
+## Photoplethysmogram (PPG)
+
+![Changes in blood volume are detected with light [@charlton-2022-wearable-photoplethysmography-cardiovascular-monitoring]](./images/2022-wearable-ppg-wrist.png)
+
+## Photoplethysmogram (PPG)
+
+![Blood volume cycles in phase with the heart [@charlton-2022-wearable-photoplethysmography-cardiovascular-monitoring]](./images/2022-wearable-ppg-pulse.png)
+
+## Photoplethysmogram (PPG)
+
+![Here is what the detected blood pulse looks like as a PPG signal [@charlton-2022-wearable-photoplethysmography-cardiovascular-monitoring]](./images/2022-wearable-ppg-signal.png)
+
+## Photoplethysmogram (PPG)
+
+![Details of the PPG waveform [@charlton-2022-wearable-photoplethysmography-cardiovascular-monitoring]](./images/2022-wearable-ppg-detail.png)
+
+## Photoplethysmogram (PPG)
+
+![Filtering PPG signals [@charlton-2022-wearable-photoplethysmography-cardiovascular-monitoring]](./images/2022-wearable-ppg-filtering.png)
+
+## Photoplethysmogram (PPG)
+
+![Motion artifacts [@charlton-2022-wearable-photoplethysmography-cardiovascular-monitoring]](./images/2022-wearable-ppg-artifacts.png)
+
+:::notes
+Last plot - not entirely clear... I think it is 0/5/10 minutes post-exercise (recovery)
+:::
+
+# Demo
+
+*external site connected to node
+
+## {background-iframe="demo.html"}
+
+# References
+
+:::{#refs}
+:::
