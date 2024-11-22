@@ -26,4 +26,4 @@ TODO
 
 **3. Introduction to eye tracking for music research and for collaborative music making**
 
-TODO
+Presentation slides: [External link](https://slides.com/shreshthsaxena/deck)
