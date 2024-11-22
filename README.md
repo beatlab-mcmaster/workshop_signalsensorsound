@@ -26,4 +26,5 @@ TODO
 
 **3. Introduction to eye tracking for music research and for collaborative music making**
 
-Presentation slides: [External link](https://slides.com/shreshthsaxena/deck)
+Presentation slides: [External link](https://slides.com/shreshthsaxena/deck) \
+Colab Notebook: [External link](https://colab.research.google.com/drive/1NY7wzbC8iwUHbqoqhvBXaZ4DA4G6S062?usp=sharing)
