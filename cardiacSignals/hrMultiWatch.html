@@ -1,0 +1,177 @@
+</html>
+<head>
+  <title>Bangle.js PPG Streaming Graph</title>
+</head>
+<body>
+  <script src="https://www.puck-js.com/puck.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  
+  <button id="btnConnect">Connect a device</button>
+  
+  <div id="chartContainer" style="height: 370px; width:100%;"></div>
+  
+  <div id="heart_rate" style="font-size: xxx-large; text-align: center; color: crimson">
+    <h2><u>Heart Rate (bpm)</u></h2>
+    <div id="devices"></div>
+  </div>
+</body>
+</html>
+<script>
+  // Code to upload to Bangle.js
+  var BANGLE_CODE = `
+Bangle.setHRMPower(1);
+Bangle.on('HRM-raw',function(hrm) {
+  var d = [
+    "HR",
+    hrm.bpm,
+    "\tConf",
+    hrm.confidence,
+    "\tRaw",
+    hrm.raw,
+    "\tFilter",
+    hrm.filt,
+    ];
+  Bluetooth.println(d.join(","));
+});
+  `;
+
+  // Allow for multiple connections
+  var _counter = 0;
+  
+  // When we click the connect button...
+  document.getElementById("btnConnect").addEventListener("click", function() {
+    // disconnect if connected already
+   /* if (connection) {
+      connection.close();
+      connection = undefined;
+    }*/
+    
+    // Connect
+    Puck.connect(function(c) {
+      if (!c) {
+        alert("Couldn't connect!");
+        return;
+      }
+      
+      _counter++;
+      var conId = _counter;
+      var conName = "Watch " + conId;
+      
+      // Add an HTML line for the device with a button
+      var div = document.createElement("div");
+      div.innerHTML =
+      `<div id="${conName}">`;
+      document.getElementById("devices").append(div);
+      
+      connection = c;
+      
+      // Handle the data we get back, and call 'onLine'
+      // whenever we get a line
+      var buf = "";
+      connection.on("data", function(d) {
+        buf += conName + "," + d;
+        var l = buf.split("\n");
+        buf = l.pop();
+        console.log("< DATA:", conName, ">", l);
+        l.forEach(onLine);
+      });
+      
+      // First, reset the Bangle
+      connection.write("reset();\n", function() {
+        // Wait for it to reset itself
+        setTimeout(function() {
+          // Now upload our code to it
+          connection.write("\x03\x10if(1){"+BANGLE_CODE+"}\n",
+            function() { console.log("Ready..."); });
+        }, 1500);
+      });
+    });
+  });
+
+  //Chart Setup
+  var data = [];
+  var store = [];
+  
+  var chart = new CanvasJS.Chart("chartContainer", {
+    title :{
+      theme: "light2",
+      text: "Bangle.js Photoplethysmogram"
+    },
+    axisY:{
+      title: "Photoplethysmogram (PPG)",
+    },
+    axisX:{
+      title: "Time",
+      valueFormatString: "", //"mm:ss",
+      labelFormatter: function(){
+      return " ";
+      },
+    },
+    toolTip: {
+  		shared: "true"
+  	},
+  	legend:{
+  		cursor:"pointer",
+  	},
+    data: [],
+  });
+
+  chart.render();
+  
+  var dataLength = 200; // number of dataPoints visible at any point
+
+  var updateChart = function (hr_data) {
+      //labelVal = new Date().toISOString();
+      xVal = new Date;
+    
+      // If new device, add to chart
+      if (hr_data.dev in data) {
+          data[`${hr_data.dev}`].push({
+            x: xVal,
+            y: hr_data.hr,
+          });
+      } else {
+        console.log(`creating new device: ${hr_data.dev}`);
+        data[`${hr_data.dev}`] = [{
+          x: xVal,
+          y: hr_data.hr,
+        }];
+        chart.options.data.push({
+          type: "spline",
+          name: hr_data.dev,
+          dataPoints: data[`${hr_data.dev}`],
+        });
+      };
+      
+      // For each device in data, shift when 200 items in array
+      for (e in data) {
+        if (data[e].length > dataLength){
+            data[e].shift();
+        };
+      };
+      
+    chart.render();
+  };
+
+  var updateHRtext = function(dev, hr) {
+    document.getElementById(dev).innerHTML = `${dev}: ` + hr;
+  }
+
+  // When we get a line of data, check it and if it's
+  // from the heart rate monitor, update it
+  function onLine(line) {
+    //console.log("RECEIVED:"+line);
+    var d = line.split(",");
+    if (d.length==9 && d[1]=="HR") {
+      // we have an HR monitor reading
+      var hr_data = {
+        dev: d[0].replace(">", ""),  // Not sure why some dev have leading '>', remove it
+        hr : parseInt(d[8]),
+        conf : parseInt(d[3]),
+      };
+      updateChart(hr_data);
+      updateHRtext(d[0], parseInt(d[2]))
+    }
+  }
+  </script>
+</html>
