@@ -1,13 +1,21 @@
 ---
 title: "Cardiac Signals"
-author: "Maya B. Flannery"
+author:
+  - "<b>Maya B. Flannery</b>"
+  - Joshua L. Schlichting
+  - Shreshth Saxena
+  - Lauren K. Fink
 date: "22/23 November 2024"
 format: 
   revealjs:
-    theme: [simple]
+    theme: [simple, dark, custom.scss]
+    incremental: true
+    footer: "Workshop: Cardiac Signals --- Maya Flannery"
+    center: true
 bibliography: references.bib
 csl: elsevier-vancouver.csl
     # multiplex: true
+slide-number: true
 ---
 
 # Physiological signals
@@ -17,31 +25,47 @@ csl: elsevier-vancouver.csl
 We have just learned how physical sounds are represented as audio signals.
 
 ::: {layout="[[1,1], [1]]"}
-![Sound waves from speakers](./images/speaker.gif){fig-align="center" .fragment height="100px"}
+::: {.fragment}
+![Sound waves from speakers](./images/speaker.gif){fig-align="center" height="100px"}
+:::
 
-![Instruments](./images/guitar.gif){fig-align="center" .fragment height="100px"}
+::: {.fragment}
+![Instruments](./images/guitar.gif){fig-align="center" height="100px"}
+:::
 
-![Represented as waveforms](./images/soundwave.png){fig-align="center" .fragment height="100px"}
+::: {.fragment}
+![Represented as waveforms](./images/soundwave.png){fig-align="center" height="100px"}
+:::
 :::
 
 ## Audio signals
 
 ...and we can analyse these signals to describe and reveal many of the underlying properties that make up sound.
 
-![img from python analysis]()
+::: {.fragment}
+![Tempo and onset detection from audio](./images/fig-audio-tempo.png)
+:::
 
 ## Physiological signals
 
 Our bodies also generate signals.
 
 ::: {layout-nrow=2}
-![Walking](){fig-align="center" .fragment width="100px"}
+::: {.fragment}
+![EEG](./images/brain-13-svgrepo-com.svg){fig-align="center" width="100px" class="svg"}
+:::
 
-![EEG](){fig-align="center" .fragment width="100px"}
+::: {.fragment}
+![Breathing](./images/lungs-organ-svgrepo-com.svg){fig-align="center" width="100px" class="svg"}
+:::
 
-![Breathing](){fig-align="center" .fragment width="100px"}
+::: {.fragment}
+![Walking](./images/walking-svgrepo-com.svg){fig-align="center" width="100px" class="svg"}
+:::
 
-![Heart beat](){fig-align="center" .fragment width="100px"}
+::: {.fragment}
+![Heart beat](./images/heart-svgrepo-com.svg){fig-align="center" width="100px" class="svg"}
+:::
 :::
 
 :::notes
@@ -59,6 +83,15 @@ Overview
 ## Cardiac anatomy
 
 ![The heart circulates blood, rich in oxygen, nutrients, hormones, etc., throughout the body with precision [@berntson-2017-cardiovascular-psychophysiology].](./images/2017-psychophysiology-heart.png)
+
+:::notes
+sinoatrial (SA)
+atrio-ventricual (AV)
+:::
+
+## Action potentials in the heart
+
+![Electrical potentials produced by the heart [@2014-figure-bundle-branch-block]](./images/BBB-physiology.jpg)
 
 ## The cardiac cycle
 
@@ -81,10 +114,6 @@ Overview
 ## We can (easily\*) detect cardiac signals!
 
 # Measuring cardiac activity
-
-## Electrocardiogram (ECG/EKG)
-
-![Electrical potentials produced by the heart [@2014-figure-bundle-branch-block]](./images/BBB-physiology.jpg)
 
 ## Electrocardiogram (ECG/EKG)
 
@@ -120,9 +149,7 @@ Last plot - not entirely clear... I think it is 0/5/10 minutes post-exercise (re
 
 # Demo
 
-*external site connected to node
-
-## {background-iframe="demo.html"}
+[Dashboard link](http://localhost:3001)
 
 # References
 
