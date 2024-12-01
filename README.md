@@ -18,11 +18,11 @@ Students will have the opportunity to learn the fundamentals of music cognition,
 
 **1. Introduction to Signals, Sensors, & Sounds**
 What do all of these words mean? Signals are everywhere; sensors allow us to measure them--but what gets lost when we convert one signal into another? How can we analyse the signals we record? Why should we want to? Is music just sound? The workshop starts with an introduction to the physics and psychology of music, highlighting the LIVELab's incredible virtual acoustics system, and providing the necessary background for subsequent aspects of the workshop. 
-- [Lecture: Signals, Sensors, Sounds Introduction](introSSS/Fink_SignalsSensorsSounds.pdf). 
+- [Lecture: Signals, Sensors, Sounds Introduction](introSSS/Fink_SignalsSensorsSounds.pdf)
 
 **2. Introduction to computational music analysis**
 How do we analyze audio and music signals? In this segment, students learn the basics of Python (e.g., variables, functions, libraries). Then, they dive into some computational music analysis, like extracting the "beat", and source-separating different instruments.
-- [Code Demo](https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioanalysis.ipynb). 
+- [Code Demo](https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioanalysis.ipynb)
 
 **3. Introduction to heart rate measurement and analysis**
 What can physiological responses tell us about how music is affecting us? In this portion of the workshop, students learn about how to measure cardiac signals and what the heart can tell us about perception and subjective experience. Students get to work with open-source programmable smart watches and to monitor incoming cardiac data in real-time. 
