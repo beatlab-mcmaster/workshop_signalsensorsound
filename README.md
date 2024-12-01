@@ -1,8 +1,8 @@
 # Signals, Sensors and Sound Coding Workshop
 
-*November 22 and 23, 2024; LIVELab, Department Department of Psychology, Neuroscience &amp; Behaviour, McMaster University*
+This repository contains materials for a workshop on music and physiological signals, presented by members of the (BEAT Lab)[https://beatlab.mcmaster.ca/] (Dr. Fink, Joshua Schlichting, Maya Flannery, & Shreshth Saxena) at McMaster University's Large Interactive Virtual Environment ((LIVELab)[https://livelab.mcmaster.ca/]). Support for the development and implementation of the workshop was provided by funding from the ArcelorMittal Dofasco Corporate Community Investment Fund, as part of LIVELab's Science & Tech Outreach for Underserved Youth grant.  
 
-This repository contains materials for a workshop on music and physiological signals, presented by members of the BEAT lab at McMaster University. 
+*The workshop was first presented November 22 and 23, 2024; LIVELab, Department Department of Psychology, Neuroscience &amp; Behaviour, McMaster University*
 
 # Workshop Description
 
@@ -16,15 +16,18 @@ Students will have the opportunity to learn the fundamentals of music cognition,
 
 # Workshop Materials
 
-**1. Introduction to computational music analysis**
+**1. Introduction to Signals, Sensors, & Sounds**
+What do all of these words mean? Signals are everywhere; sensors allow us to measure them--but what gets lost when we convert one signal into another? How can we analyse the signals we record? Why should we want to? Is music just sound? The workshop starts with an introduction to the physics and psychology of music, providing the necessary background for subsequent aspects of the workshop. Slides are available here: [Signals, Sensors, Sounds Introduction](introSSS/Fink_SignalsSensorsSounds.pdf). 
 
-The workshop starts with an introduction to what music is and how we approach music cognition as a research interest [TODO link to slides](TODO link to slides). Next, students learned the basics of computational music analysis in Python with a Google Colab notebook: [https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioanalysis.ipynb](https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioanalysis.ipynb).
+**2. Introduction to computational music analysis**
+How do we analyze audio and music signals? In this segment, students learned the basics of Python and computational music analysis in a Google Colab notebook: [https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioSignals/audioanalysis.ipynb](https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioanalysis.ipynb). 
 
-**2. Introduction to heart rate measurement and analysis**
+**3. Introduction to heart rate measurement and analysis**
+What can physiological responses tell us about how music is affecting us? In this portion of the workshop, students learn about how to measure cardiac signals and what the heart can tell us about perception and subjective experience. Students get to work with open-source programmable smart watches and to monitor incoming cardiac data in real-time. 
+- [Lecture](cardiacSignals/Cardiac Signals (draft).pdf)
+- [Demo](cardiacSignals/hrMultiWatch.html). NOTE: This demo will not function without a watch present. 
 
-TODO
-
-**3. Introduction to eye tracking for music research and for collaborative music making**
-
-Presentation slides: [External link](https://slides.com/shreshthsaxena/deck) \
-Colab Notebook: [External link](https://colab.research.google.com/drive/1NY7wzbC8iwUHbqoqhvBXaZ4DA4G6S062?usp=sharing)
+**4. Introduction to eye tracking for music research**
+What do the eyes tell us about a listener's, performer's, or audience's attention and subjective experience? How can we measure eye activity in live concert settings? In this segment of the workshop, students get hands-on experience with mobile eye-tracking glasses! 
+- [Presentation slides](https://slides.com/shreshthsaxena/deck) \
+- [Colab Notebook](https://colab.research.google.com/drive/1NY7wzbC8iwUHbqoqhvBXaZ4DA4G6S062?usp=sharing)
