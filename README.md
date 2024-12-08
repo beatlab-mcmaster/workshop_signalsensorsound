@@ -22,7 +22,7 @@ What do all of these words mean? Signals are everywhere; sensors allow us to mea
 
 ### Introduction to computational music analysis
 How do we analyze audio and music signals? In this segment, students learn the basics of Python (e.g., variables, functions, libraries). Then, they dive into some computational music analysis, like extracting the "beat", and source-separating different instruments.
-- [Code Demo](https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioanalysis.ipynb)
+- [Code Demo](https://colab.research.google.com/github/beatlab-mcmaster/workshop_signalsensorsound/blob/main/audioSignals/audioanalysis.ipynb)
 
 ### Introduction to heart rate measurement and analysis
 What can physiological responses tell us about how music is affecting us? In this portion of the workshop, students learn about how to measure cardiac signals and what the heart can tell us about perception and subjective experience. Students get to work with open-source programmable smart watches and to monitor incoming cardiac data in real-time. 
